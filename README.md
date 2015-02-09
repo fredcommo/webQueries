@@ -11,6 +11,7 @@ require(devtools)
 install_github("fredcommo/webQueries/webQueries")
 
 # see examples
+require(webQueries)
 ?geneQuery
 ?protQuery
 ````
