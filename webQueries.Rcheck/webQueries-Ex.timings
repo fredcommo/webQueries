@@ -1,0 +1,5 @@
+name	user	system	elapsed
+geneQuery	0.110	0.007	5.125	
+hg19	0.002	0.001	0.002	
+protQuery	0.032	0.005	4.737	
+webQueries-package	0.054	0.004	2.050	
