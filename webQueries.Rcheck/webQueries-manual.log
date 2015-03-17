@@ -1,13 +1,13 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2015.2.7)  17 MAR 2015 01:45
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2015.2.7)  17 MAR 2015 14:19
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**/private/var/folders/d4/31r2m9bn7l700w_y6mk2txpc0000gn/T/Rtmp51vgDY/Rd2pdf3a1
-a29db727d/Rd2.tex
+**/private/var/folders/d4/31r2m9bn7l700w_y6mk2txpc0000gn/T/Rtmp25uFW6/Rd2pdfc76
+37f0bae3/Rd2.tex
 
-(/private/var/folders/d4/31r2m9bn7l700w_y6mk2txpc0000gn/T/Rtmp51vgDY/Rd2pdf3a1a
-29db727d/Rd2.tex
+(/private/var/folders/d4/31r2m9bn7l700w_y6mk2txpc0000gn/T/Rtmp25uFW6/Rd2pdfc763
+7f0bae3/Rd2.tex
 LaTeX2e <2014/05/01>
 Babel <3.9k> and hyphenation patterns for 78 languages loaded.
 
@@ -710,68 +710,62 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 
 (/usr/local/texlive/2014/texmf-dist/tex/latex/base/utf8.def
 File: utf8.def 2008/04/05 v1.1m UTF-8 support for inputenc
-) [1
+)
+Overfull \vbox (36.37697pt too high) has occurred while \output is active []
+
+
+[1
 
 
 {/usr/local/texlive/2014/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
 (/usr/local/texlive/2014/texmf-dist/tex/latex/base/utf8.def
 File: utf8.def 2008/04/05 v1.1m UTF-8 support for inputenc
-) [2]
-(/usr/local/texlive/2014/texmf-dist/tex/latex/base/utf8.def
-File: utf8.def 2008/04/05 v1.1m UTF-8 support for inputenc
-) [3]
-(/usr/local/texlive/2014/texmf-dist/tex/latex/base/utf8.def
-File: utf8.def 2008/04/05 v1.1m UTF-8 support for inputenc
-) [4] (./Rd2.ind
-[5]
-LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <12> not available
-(Font)              Font shape `T1/ptm/b/n' tried instead on input line 3.
-
+) [2] (./Rd2.ind
+[3]
 
 LaTeX Font Warning: Font shape `T1/zi4/m/it' undefined
-(Font)              using `T1/zi4/m/n' instead on input line 26.
+(Font)              using `T1/zi4/m/n' instead on input line 11.
 
-[6
+[4
 
 
 ])
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 264.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 264.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 169.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 169.
  (./Rd2.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 264.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 264.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 169.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 169.
 Package rerunfilecheck Info: File `Rd2.out' has not changed.
-(rerunfilecheck)             Checksum: 87746C4FADA190C87FB33D60302BAEE8;252.
+(rerunfilecheck)             Checksum: CD55AF69786BCFEE9C15EA02357E253D;160.
 
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 264.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 169.
  ) 
 Here is how much of TeX's memory you used:
- 6361 strings out of 493117
- 91357 string characters out of 6135434
+ 6329 strings out of 493117
+ 90812 string characters out of 6135434
  170776 words of memory out of 5000000
- 9673 multiletter control sequences out of 15000+600000
- 40674 words of font info for 49 fonts, out of 8000000 for 9000
+ 9669 multiletter control sequences out of 15000+600000
+ 37871 words of font info for 47 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 38i,5n,27p,305b,527s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 38i,5n,27p,304b,439s stack positions out of 5000i,500n,10000p,200000b,80000s
 pdfTeX warning (dest): name{Rfn.xpathApply} has been referenced but does not 
 exist, replaced by a fixed one
 
 {/usr/local/texlive/2014/texmf-dist/fonts/enc/dvips/base/8r.enc}{/usr/local/tex
 live/2014/texmf-dist/fonts/enc/dvips/inconsolata/i4-t1-0.enc}</usr/local/texliv
 e/2014/texmf-dist/fonts/type1/public/inconsolata/Inconsolata-zi4r.pfb></usr/loc
-al/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/loca
-l/texlive/2014/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/local/texli
-ve/2014/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2014/te
-xmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2014/texmf-dist/f
-onts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1
-/urw/times/utmri8a.pfb>
-Output written on Rd2.pdf (6 pages, 84429 bytes).
+al/texlive/2014/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/local/texl
+ive/2014/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2014/t
+exmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2014/texmf-dist/
+fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2014/texmf-dist/fonts/type
+1/urw/times/utmri8a.pfb>
+Output written on Rd2.pdf (4 pages, 69551 bytes).
 PDF statistics:
- 159 PDF objects out of 1000 (max. 8388607)
- 142 compressed objects within 2 object streams
- 50 named destinations out of 1000 (max. 500000)
- 41 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 100 PDF objects out of 1000 (max. 8388607)
+ 87 compressed objects within 1 object stream
+ 27 named destinations out of 1000 (max. 500000)
+ 25 words of extra memory for PDF output out of 10000 (max. 10000000)
 

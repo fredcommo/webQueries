@@ -6,28 +6,21 @@ opts_chunk$set(fig.align='center', fig.width=5.5, fig.height=4.5,
 ## ----gene, echo=TRUE, prompt=FALSE---------------------------------------
 require(webQueries)
 
-# Using HUGO symbol
-geneQuery("erbb2")
+runQuery("erbb2", "gene")
+runQuery(2064, "gene", bySymbol = FALSE)
 
-# Using entrezgene id
-data.frame(output=geneQuery(2064))
+# Querying the Protein database
+runQuery("erbb2", "protein")
+runQuery("P04626", "protein", bySymbol = FALSE)
 
-## ----mutligene, echo=TRUE, prompt=FALSE----------------------------------
+# Querying the SNP database
+runQuery("erbb2", "snp")
+runQuery(2064, "snp", bySymbol = FALSE)
+
+## ----multi, echo=TRUE, prompt=FALSE--------------------------------------
 # Multiple queries
 ids <- c("egfr", "erbb2", "fgfr1")
-annots <- lapply(ids, function(id) geneQuery(id) )
-annots <- do.call(rbind, annots)
-annots
-
-## ----prot, echo=TRUE, prompt=FALSE---------------------------------------
-# Using UniProt id
-myProt <- protQuery("P04626")
-as.list(myProt)
-
-## ----multiprot, echo=TRUE, prompt=FALSE----------------------------------
-# Multiple queries
-ids <- c("egfr", "erbb2", "fgfr1")
-annots <- lapply(ids, function(id) protQuery(id) )
+annots <- lapply(ids, function(id) runQuery(id, "gene") )
 annots <- do.call(rbind, annots)
 annots
 

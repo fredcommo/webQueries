@@ -52,7 +52,7 @@ New submission
 * checking examples ... OK
 * checking for unstated dependencies in tests ... OK
 * checking tests ... OK
-  Running ‘runTests.R’
+  Running ‘runTests.R’ [2s/27s]
 * checking for unstated dependencies in vignettes ... OK
 * checking package vignettes in ‘inst/doc’ ... OK
 * checking running R code from vignettes ... OK

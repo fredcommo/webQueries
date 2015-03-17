@@ -1,5 +1,3 @@
-geneQuery               Gene annotations via Web Queries
-hg19                    Hg19 chromosomes length
-protQuery               Gene annotations via Web Queries
+runQuery                Retrieve NCBI annotations through Web Queries
 webQueries-package      Querying NCBI for Gene and/or Protein
                         Annotations.

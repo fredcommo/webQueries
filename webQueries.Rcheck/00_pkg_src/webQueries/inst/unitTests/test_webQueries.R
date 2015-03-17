@@ -1,16 +1,21 @@
 test_geneQueries <- function(){
-	checkEquals(gettext(geneQuery("erbb2", verbose = FALSE)[2]), "ERBB2")
-	checkEquals(gettext(geneQuery("ERBB2", verbose = FALSE)[2]), "ERBB2")
-	checkEquals(gettext(geneQuery(2064, verbose = FALSE)[16]), "2064")
+	checkEquals(gettext(tmp <- runQuery("erbb2", "gene")$Name), "ERBB2")
+	checkEquals(gettext(tmp <- runQuery("ERBB2", "gene")$Name), "ERBB2")
+	checkEquals(gettext(tmp <- runQuery(2064, "gene", bySymbol=FALSE)$Name), "ERBB2")
 }
 test_protQueries <- function(){
-	checkEquals(gettext(protQuery("erbb2", verbose = FALSE)[4]), "P04626")
-	checkEquals(gettext(protQuery("ERBB2", verbose = FALSE)[4]), "P04626")
-	checkEquals(gettext(protQuery("P04626", verbose = FALSE)[4]), "P04626")
+	checkEquals(gettext(tmp <- runQuery("erbb2", "protein")$Caption[1]), "P04626")
+	checkEquals(gettext(tmp <- runQuery("ERBB2", "protein")$Caption[1]), "P04626")
+	checkEquals(gettext(tmp <- runQuery("P04626", "protein")$Caption[1]), "P04626")
+}
+test_snpQueries <- function(){
+	checkTrue(nrow(tmp <- runQuery("erbb2", "snp"))>0)
+	checkTrue(nrow(tmp <- runQuery("2064", "snp"))>0)
+	checkTrue(nrow(tmp <- runQuery(2064, "snp"))>0)
 }
 test_badQueries <- function(){
-	checkTrue(is.null(geneQuery("doesNotExist", verbose = FALSE)))
-	checkTrue(is.null(geneQuery(0123456789, verbose = FALSE)))
-	checkTrue(is.null(protQuery("doesNotExist", verbose = FALSE)))
-	checkTrue(is.null(geneQuery(0123456789, verbose = FALSE)))
+	checkTrue(is.null(tmp <- runQuery("doesNotExist", "gene")))
+	checkTrue(is.null(tmp <- runQuery(0123456789, "gene")))
+	checkTrue(is.null(tmp <- runQuery("doesNotExist", "protein")))
+	checkTrue(is.null(tmp <- runQuery("doesNotExist", "snp")))
 }

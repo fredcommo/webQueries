@@ -9,8 +9,8 @@ Description: Retrieve gene and protein annotations from NCBI,
     given HUGO symbols or ids (entrezgene and Uniprot are supported).
 License: Artistic-2.0
 biocViews: Annotation,GenomeAnnotation
-Imports: XML
+Imports: XML,Hmisc
 Suggests: RUnit,knitr,BiocGenerics
 VignetteBuilder: knitr
-Packaged: 2015-03-17 00:44:49 UTC; fredcommo
-Built: R 3.1.2; ; 2015-03-17 00:45:06 UTC; unix
+Packaged: 2015-03-17 13:16:38 UTC; fredcommo
+Built: R 3.1.2; ; 2015-03-17 13:17:50 UTC; unix

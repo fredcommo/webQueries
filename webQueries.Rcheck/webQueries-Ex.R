@@ -17,79 +17,42 @@ library('webQueries')
 
 base::assign(".oldSearch", base::search(), pos = 'CheckExEnv')
 cleanEx()
-nameEx("geneQuery")
-### * geneQuery
+nameEx("runQuery")
+### * runQuery
 
 flush(stderr()); flush(stdout())
 
 base::assign(".ptime", proc.time(), pos = "CheckExEnv")
-### Name: geneQuery
-### Title: Gene annotations via Web Queries
-### Aliases: geneQuery
+### Name: runQuery
+### Title: Retrieve NCBI annotations through Web Queries
+### Aliases: runQuery
 
 ### ** Examples
 
-# Simple query using HUGO symbol or entrezgene id
-geneQuery("erbb2")
-geneQuery(2064)
-
-# Multiple queries
-ids <- c("egfr", "erbb2", "fgfr1")
-annots <- lapply(ids, function(id) geneQuery(id) )
-annots <- do.call(rbind, annots)
-annots
+# Querying the gene database using HUGO symbol or entrezgene id
+## Not run: 
+##D runQuery("erbb2", "gene")
+##D runQuery(2064, "gene", bySymbol = FALSE)
+##D 
+##D # Querying the Protein database
+##D runQuery("erbb2", "protein")
+##D runQuery("P04626", "protein", bySymbol = FALSE)
+##D 
+##D # Querying the SNP database
+##D runQuery("erbb2", "snp")
+##D runQuery(2064, "snp", bySymbol = FALSE)
+##D 
+##D # Multiple queries
+##D ids <- c("egfr", "erbb2", "fgfr1")
+##D annots <- lapply(ids, function(id) runQuery(id, "gene") )
+##D annots <- do.call(rbind, annots)
+##D annots
+## End(Not run)
 
 
 
 base::assign(".dptime", (proc.time() - get(".ptime", pos = "CheckExEnv")), pos = "CheckExEnv")
-base::cat("geneQuery", base::get(".format_ptime", pos = 'CheckExEnv')(get(".dptime", pos = "CheckExEnv")), "\n", file=base::get(".ExTimings", pos = 'CheckExEnv'), append=TRUE, sep="\t")
-cleanEx()
-nameEx("hg19")
-### * hg19
-
-flush(stderr()); flush(stdout())
-
-base::assign(".ptime", proc.time(), pos = "CheckExEnv")
-### Name: hg19
-### Title: Hg19 chromosomes length
-### Aliases: hg19
-### Keywords: datasets
-
-### ** Examples
-
-    load(system.file("extdata", "hg19.rda", package="webQueries"))
-    
-
-
-base::assign(".dptime", (proc.time() - get(".ptime", pos = "CheckExEnv")), pos = "CheckExEnv")
-base::cat("hg19", base::get(".format_ptime", pos = 'CheckExEnv')(get(".dptime", pos = "CheckExEnv")), "\n", file=base::get(".ExTimings", pos = 'CheckExEnv'), append=TRUE, sep="\t")
-cleanEx()
-nameEx("protQuery")
-### * protQuery
-
-flush(stderr()); flush(stdout())
-
-base::assign(".ptime", proc.time(), pos = "CheckExEnv")
-### Name: protQuery
-### Title: Gene annotations via Web Queries
-### Aliases: protQuery
-
-### ** Examples
-
-# Simple query using HUGO symbol or UniProt id.
-protQuery("erbb2")
-protQuery("P04626")
-
-# Multiple queries
-ids <- c("egfr", "erbb2", "fgfr1")
-annots <- lapply(ids, function(id) protQuery(id) )
-annots <- do.call(rbind, annots)
-annots
-
-
-
-base::assign(".dptime", (proc.time() - get(".ptime", pos = "CheckExEnv")), pos = "CheckExEnv")
-base::cat("protQuery", base::get(".format_ptime", pos = 'CheckExEnv')(get(".dptime", pos = "CheckExEnv")), "\n", file=base::get(".ExTimings", pos = 'CheckExEnv'), append=TRUE, sep="\t")
+base::cat("runQuery", base::get(".format_ptime", pos = 'CheckExEnv')(get(".dptime", pos = "CheckExEnv")), "\n", file=base::get(".ExTimings", pos = 'CheckExEnv'), append=TRUE, sep="\t")
 cleanEx()
 nameEx("webQueries-package")
 ### * webQueries-package
@@ -103,17 +66,25 @@ base::assign(".ptime", proc.time(), pos = "CheckExEnv")
 
 ### ** Examples
 
-# Using HUGO symbol
-geneQuery("erbb2")
-
-# Using entrezgene id
-geneQuery(2064)
-
-# Using HUGO symbol
-protQuery("erbb2")
-
-# Using UniProt id
-protQuery("P04626")
+## Not run: 
+##D # Querying the gene database using HUGO symbol or entrezgene id
+##D runQuery("erbb2", "gene")
+##D runQuery(2064, "gene", bySymbol = FALSE)
+##D 
+##D # Querying the Protein database
+##D runQuery("erbb2", "protein")
+##D runQuery("P04626", "protein", bySymbol = FALSE)
+##D 
+##D # Querying the SNP database
+##D runQuery("erbb2", "snp")
+##D runQuery(2064, "snp", bySymbol = FALSE)
+##D 
+##D # Multiple queries
+##D ids <- c("egfr", "erbb2", "fgfr1")
+##D annots <- lapply(ids, function(id) runQuery(id, "gene") )
+##D annots <- do.call(rbind, annots)
+##D annots
+## End(Not run)
 
 
 

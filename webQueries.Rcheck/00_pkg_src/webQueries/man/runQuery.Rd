@@ -1,10 +1,8 @@
-\name{webQueries-package}
-\alias{webQueries-package}
-\alias{XML-package}
+\name{runQuery}
+\alias{runQuery}
 
-\docType{package}
 \title{
-Querying NCBI for Gene and/or Protein Annotations.
+Retrieve NCBI annotations through Web Queries
 }
 \description{
 This function simply constructs an appropriate link to query the NCBI databases,
@@ -13,20 +11,31 @@ HUGO symbols or official ids are supported.\cr
 Information is extracted from the returned xml file,
 using \code{\link[XML]{xpathApply}} from \code{XLM} package.
 }
-\details{
-    \tabular{ll}{
-        Package: \tab webQueries\cr
-        Type: \tab Package\cr
-        Version: \tab 0.98.0\cr
-        Date: \tab 2015-03-15\cr
-        License: \tab Artistic-2.0\cr
+\usage{
+runQuery(symbol, db, bySymbol = TRUE, ktries = 10)
+}
+\arguments{
+    \item{symbol}{
+        : character or numeric. \code{geneId} can be either a valid HUGO symbol
+        (not case sensitive), or an entrezgene id. See \code{note}.
         }
-This function simply constructs an appropriate link to query the NCBI databases,
-using E-utilities.\cr
-Information is extracted from the returned xml file.
+    \item{db}{
+        : string. The NCBI database to query.
+        \code{"gene"}, \code{"protein"}, and \code{"snp"} are supported.
+        }
+    \item{bySymbol}{
+        : logical. Must be set to \code{TRUE} when a HUGO symbols is used.
+        }
+    \item{ktries}{
+        : numeric. The number of retries when connexion errors occur.
+        Default is 10.
+        }
+}
+\value{
+    A vector of values.  
 }
 \author{
-    Frederic Commo <frederic.commo@gustaveroussy.fr>
+    Frederic Commo
 }
 \note{
     See \href{http://www.ncbi.nlm.nih.gov/books/NBK25501/}{Introduction to
@@ -37,6 +46,7 @@ Information is extracted from the returned xml file.
 
 \examples{
 # Querying the gene database using HUGO symbol or entrezgene id
+\dontrun{
 runQuery("erbb2", "gene")
 runQuery(2064, "gene", bySymbol = FALSE)
 
@@ -53,4 +63,5 @@ ids <- c("egfr", "erbb2", "fgfr1")
 annots <- lapply(ids, function(id) runQuery(id, "gene") )
 annots <- do.call(rbind, annots)
 annots
+}
 }

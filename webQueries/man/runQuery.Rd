@@ -10,26 +10,25 @@ using E-utilities. See \code{note}.
 HUGO symbols or official ids are supported.\cr
 Information is extracted from the returned xml file,
 using \code{\link[XML]{xpathApply}} from \code{XLM} package.
-\usage{
-runQuery(geneId, DB, bySymbol = TRUE, kTries = 10)
 }
-
+\usage{
+runQuery(symbol, db, bySymbol = TRUE, ktries = 10)
+}
 \arguments{
-    \item{geneId}{
+    \item{symbol}{
         : character or numeric. \code{geneId} can be either a valid HUGO symbol
         (not case sensitive), or an entrezgene id. See \code{note}.
         }
-    \item{DB}{
+    \item{db}{
         : string. The NCBI database to query.
         \code{"gene"}, \code{"protein"}, and \code{"snp"} are supported.
         }
-    \item{bySymb}{
+    \item{bySymbol}{
         : logical. Must be set to \code{TRUE} when a HUGO symbols is used.
         }
-    \item{kTries}{
+    \item{ktries}{
         : numeric. The number of retries when connexion errors occur.
         Default is 10.
-        }
         }
 }
 \value{
@@ -52,7 +51,7 @@ runQuery(2064, "gene", bySymbol = FALSE)
 
 # Querying the Protein database
 runQuery("erbb2", "protein")
-runQuery(2064, "protein", bySymbol = FALSE)
+runQuery("P04626", "protein", bySymbol = FALSE)
 
 # Querying the SNP database
 runQuery("erbb2", "snp")

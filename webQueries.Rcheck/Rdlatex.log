@@ -4,8 +4,8 @@ This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format
  restricted \write18 enabled.
 entering extended mode
 
-(/private/var/folders/d4/31r2m9bn7l700w_y6mk2txpc0000gn/T/Rtmp51vgDY/Rd2pdf3a1a
-29db727d/Rd2.tex
+(/private/var/folders/d4/31r2m9bn7l700w_y6mk2txpc0000gn/T/Rtmp25uFW6/Rd2pdfc763
+7f0bae3/Rd2.tex
 LaTeX2e <2014/05/01>
 Babel <3.9k> and hyphenation patterns for 78 languages loaded.
 
@@ -74,10 +74,8 @@ No file Rd2.aux.
 Underfull \vbox (badness 10000) has occurred while \output is active [1{/usr/lo
 cal/texlive/2014/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
 (/usr/local/texlive/2014/texmf-dist/tex/latex/base/utf8.def) [2]
-(/usr/local/texlive/2014/texmf-dist/tex/latex/base/utf8.def) [3]
-(/usr/local/texlive/2014/texmf-dist/tex/latex/base/utf8.def) [4]
 No file Rd2.ind.
-[5] (./Rd2.aux)
+[3] (./Rd2.aux)
 
 Package rerunfilecheck Warning: File `Rd2.out' has changed.
 (rerunfilecheck)                Rerun to get outlines right
@@ -96,20 +94,20 @@ ive/2014/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2014/t
 exmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2014/texmf-dist/
 fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2014/texmf-dist/fonts/type
 1/urw/times/utmri8a.pfb>
-Output written on Rd2.pdf (5 pages, 73846 bytes).
+Output written on Rd2.pdf (3 pages, 67352 bytes).
 Transcript written on Rd2.log.
 This is makeindex, version 2.15 [TeX Live 2014] (kpathsea + Thai support).
-Scanning input file ./Rd2.idx....done (11 entries accepted, 0 rejected).
-Sorting entries....done (41 comparisons).
-Generating output file ./Rd2.ind....done (31 lines written, 0 warnings).
+Scanning input file ./Rd2.idx....done (5 entries accepted, 0 rejected).
+Sorting entries....done (12 comparisons).
+Generating output file ./Rd2.ind....done (15 lines written, 0 warnings).
 Output written in ./Rd2.ind.
 Transcript written in ./Rd2.ilg.
 This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex)
  restricted \write18 enabled.
 entering extended mode
 
-(/private/var/folders/d4/31r2m9bn7l700w_y6mk2txpc0000gn/T/Rtmp51vgDY/Rd2pdf3a1a
-29db727d/Rd2.tex
+(/private/var/folders/d4/31r2m9bn7l700w_y6mk2txpc0000gn/T/Rtmp25uFW6/Rd2pdfc763
+7f0bae3/Rd2.tex
 LaTeX2e <2014/05/01>
 Babel <3.9k> and hyphenation patterns for 78 languages loaded.
 
@@ -174,17 +172,16 @@ Writing index file Rd2.idx
 (./Rd2.out) (./Rd2.out)
 (/usr/local/texlive/2014/texmf-dist/tex/latex/inconsolata/t1zi4.fd)
 (/usr/local/texlive/2014/texmf-dist/tex/latex/psnfss/t1phv.fd) (./Rd2.toc)
-(/usr/local/texlive/2014/texmf-dist/tex/latex/base/utf8.def) [1{/usr/local/texl
-ive/2014/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-(/usr/local/texlive/2014/texmf-dist/tex/latex/base/utf8.def) [2]
-(/usr/local/texlive/2014/texmf-dist/tex/latex/base/utf8.def) [3]
-(/usr/local/texlive/2014/texmf-dist/tex/latex/base/utf8.def) [4] (./Rd2.ind
-[5]
+(/usr/local/texlive/2014/texmf-dist/tex/latex/base/utf8.def)
+Overfull \vbox (14.37697pt too high) has occurred while \output is active
+[1{/usr/local/texlive/2014/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
+(/usr/local/texlive/2014/texmf-dist/tex/latex/base/utf8.def) [2] (./Rd2.ind
+[3]
 
 LaTeX Font Warning: Font shape `T1/zi4/m/it' undefined
-(Font)              using `T1/zi4/m/n' instead on input line 26.
+(Font)              using `T1/zi4/m/n' instead on input line 11.
 
-[6]) (./Rd2.aux)
+[4]) (./Rd2.aux)
 
 Package rerunfilecheck Warning: File `Rd2.out' has changed.
 (rerunfilecheck)                Rerun to get outlines right
@@ -193,32 +190,33 @@ Package rerunfilecheck Warning: File `Rd2.out' has changed.
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
- )pdfTeX warning (dest): name{Rfn.xpathApply} has been referenced but does not 
-exist, replaced by a fixed one
+ )
+(see the transcript file for additional information)pdfTeX warning (dest): name
+{Rfn.xpathApply} has been referenced but does not exist, replaced by a fixed on
+e
 
 {/usr/local/texlive/2014/texmf-dist/fonts/enc/dvips/base/8r.enc}{/usr/local/tex
 live/2014/texmf-dist/fonts/enc/dvips/inconsolata/i4-t1-0.enc}</usr/local/texliv
 e/2014/texmf-dist/fonts/type1/public/inconsolata/Inconsolata-zi4r.pfb></usr/loc
-al/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/loca
-l/texlive/2014/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/local/texli
-ve/2014/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2014/te
-xmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2014/texmf-dist/f
-onts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1
-/urw/times/utmri8a.pfb>
-Output written on Rd2.pdf (6 pages, 84059 bytes).
+al/texlive/2014/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/local/texl
+ive/2014/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2014/t
+exmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2014/texmf-dist/
+fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2014/texmf-dist/fonts/type
+1/urw/times/utmri8a.pfb>
+Output written on Rd2.pdf (4 pages, 68887 bytes).
 Transcript written on Rd2.log.
 This is makeindex, version 2.15 [TeX Live 2014] (kpathsea + Thai support).
-Scanning input file ./Rd2.idx....done (11 entries accepted, 0 rejected).
-Sorting entries....done (41 comparisons).
-Generating output file ./Rd2.ind....done (31 lines written, 0 warnings).
+Scanning input file ./Rd2.idx....done (5 entries accepted, 0 rejected).
+Sorting entries....done (12 comparisons).
+Generating output file ./Rd2.ind....done (15 lines written, 0 warnings).
 Output written in ./Rd2.ind.
 Transcript written in ./Rd2.ilg.
 This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex)
  restricted \write18 enabled.
 entering extended mode
 
-(/private/var/folders/d4/31r2m9bn7l700w_y6mk2txpc0000gn/T/Rtmp51vgDY/Rd2pdf3a1a
-29db727d/Rd2.tex
+(/private/var/folders/d4/31r2m9bn7l700w_y6mk2txpc0000gn/T/Rtmp25uFW6/Rd2pdfc763
+7f0bae3/Rd2.tex
 LaTeX2e <2014/05/01>
 Babel <3.9k> and hyphenation patterns for 78 languages loaded.
 
@@ -283,34 +281,34 @@ Writing index file Rd2.idx
 (./Rd2.out) (./Rd2.out)
 (/usr/local/texlive/2014/texmf-dist/tex/latex/inconsolata/t1zi4.fd)
 (/usr/local/texlive/2014/texmf-dist/tex/latex/psnfss/t1phv.fd) (./Rd2.toc)
-(/usr/local/texlive/2014/texmf-dist/tex/latex/base/utf8.def) [1{/usr/local/texl
-ive/2014/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-(/usr/local/texlive/2014/texmf-dist/tex/latex/base/utf8.def) [2]
-(/usr/local/texlive/2014/texmf-dist/tex/latex/base/utf8.def) [3]
-(/usr/local/texlive/2014/texmf-dist/tex/latex/base/utf8.def) [4] (./Rd2.ind
-[5]
+(/usr/local/texlive/2014/texmf-dist/tex/latex/base/utf8.def)
+Overfull \vbox (36.37697pt too high) has occurred while \output is active
+[1{/usr/local/texlive/2014/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
+(/usr/local/texlive/2014/texmf-dist/tex/latex/base/utf8.def) [2] (./Rd2.ind
+[3]
 
 LaTeX Font Warning: Font shape `T1/zi4/m/it' undefined
-(Font)              using `T1/zi4/m/n' instead on input line 26.
+(Font)              using `T1/zi4/m/n' instead on input line 11.
 
-[6]) (./Rd2.aux)
+[4]) (./Rd2.aux)
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
- )pdfTeX warning (dest): name{Rfn.xpathApply} has been referenced but does not 
-exist, replaced by a fixed one
+ )
+(see the transcript file for additional information)pdfTeX warning (dest): name
+{Rfn.xpathApply} has been referenced but does not exist, replaced by a fixed on
+e
 
 {/usr/local/texlive/2014/texmf-dist/fonts/enc/dvips/base/8r.enc}{/usr/local/tex
 live/2014/texmf-dist/fonts/enc/dvips/inconsolata/i4-t1-0.enc}</usr/local/texliv
 e/2014/texmf-dist/fonts/type1/public/inconsolata/Inconsolata-zi4r.pfb></usr/loc
-al/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/loca
-l/texlive/2014/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/local/texli
-ve/2014/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2014/te
-xmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2014/texmf-dist/f
-onts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1
-/urw/times/utmri8a.pfb>
-Output written on Rd2.pdf (6 pages, 84429 bytes).
+al/texlive/2014/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/local/texl
+ive/2014/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2014/t
+exmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2014/texmf-dist/
+fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2014/texmf-dist/fonts/type
+1/urw/times/utmri8a.pfb>
+Output written on Rd2.pdf (4 pages, 69551 bytes).
 Transcript written on Rd2.log.
 Saving output to 'webQueries-manual.pdf' ...
 Done
-You may want to clean up by 'rm -rf /var/folders/d4/31r2m9bn7l700w_y6mk2txpc0000gn/T//Rtmp51vgDY/Rd2pdf3a1a29db727d'
+You may want to clean up by 'rm -rf /var/folders/d4/31r2m9bn7l700w_y6mk2txpc0000gn/T//Rtmp25uFW6/Rd2pdfc7637f0bae3'

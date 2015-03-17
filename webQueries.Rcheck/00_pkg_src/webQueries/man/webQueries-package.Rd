@@ -7,9 +7,11 @@
 Querying NCBI for Gene and/or Protein Annotations.
 }
 \description{
-Retrieve gene and protein annotations from NCBI, given HUGO symbols or
-official ids (entrezgene and Uniprot are supported). See \code{note}.\cr
-\code{\link[XML]{xpathApply}} is used to extract information from xml files.
+This function simply constructs an appropriate link to query the NCBI databases,
+using E-utilities. See \code{note}.
+HUGO symbols or official ids are supported.\cr
+Information is extracted from the returned xml file,
+using \code{\link[XML]{xpathApply}} from \code{XLM} package.
 }
 \details{
     \tabular{ll}{
@@ -27,20 +29,30 @@ Information is extracted from the returned xml file.
     Frederic Commo <frederic.commo@gustaveroussy.fr>
 }
 \note{
-    See \href{http://www.ncbi.nlm.nih.gov/books/NBK25500/}{Introduction to
-    the E-utilities} for more details.
+    See \href{http://www.ncbi.nlm.nih.gov/books/NBK25501/}{Introduction to
+    the E-utilities} for more details.\cr
+    \code{runQuery} only supports queries sent to
+    \code{"gene"}, \code{"protein"} , and \code{"snp"} databases.
 }
 
 \examples{
-# Using HUGO symbol
-geneQuery("erbb2")
+\dontrun{
+# Querying the gene database using HUGO symbol or entrezgene id
+runQuery("erbb2", "gene")
+runQuery(2064, "gene", bySymbol = FALSE)
 
-# Using entrezgene id
-geneQuery(2064)
+# Querying the Protein database
+runQuery("erbb2", "protein")
+runQuery("P04626", "protein", bySymbol = FALSE)
 
-# Using HUGO symbol
-protQuery("erbb2")
+# Querying the SNP database
+runQuery("erbb2", "snp")
+runQuery(2064, "snp", bySymbol = FALSE)
 
-# Using UniProt id
-protQuery("P04626")
+# Multiple queries
+ids <- c("egfr", "erbb2", "fgfr1")
+annots <- lapply(ids, function(id) runQuery(id, "gene") )
+annots <- do.call(rbind, annots)
+annots
+}
 }

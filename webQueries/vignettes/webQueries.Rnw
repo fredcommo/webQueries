@@ -59,10 +59,10 @@ opts_chunk$set(fig.align='center', fig.width=5.5, fig.height=4.5,
 \texttt{webQueries} provides R functions for retrieving up-to-date gene and
 protein annotations from NCBI databases, given HUGO symbols or ids, e.g. 
 entrezgene or Uniprot ids.\\
-The main function, \texttt{runQuery()}, is a wrapper for the NCBI E-utilities 
+The main function, \texttt{runQuery()}, is a wrapper for the NCBI E-utilities
 functions \cite{eUtiles}, and is designed to query \emph{genes},
- \emph{protein}, and  \emph{snp} databases.
-\texttt{runQueries} requires a functional connection to internet.\\
+\emph{protein}, and \emph{snp} databases.
+\texttt{runQueries} requires a functional web connexion.\\
 In case a HUGO symbol is called, \texttt{runQuery} first interogate NCBI in 
 order to get identifiers, using E-utilities \texttt{Esearch}, then use the 
 returned values to get the corresponding annotations, using E-utilities
@@ -80,7 +80,7 @@ runQuery(2064, "gene", bySymbol = FALSE)
 
 # Querying the Protein database
 runQuery("erbb2", "protein")
-runQuery(2064, "protein", bySymbol = FALSE)
+runQuery("P04626", "protein", bySymbol = FALSE)
 
 # Querying the SNP database
 runQuery("erbb2", "snp")
