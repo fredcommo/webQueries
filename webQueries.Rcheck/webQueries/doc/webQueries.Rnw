@@ -1,0 +1,116 @@
+
+
+%\documentclass{article}
+\documentclass[a4paper]{article}
+\setlength{\parskip}{0.7ex plus0.1ex minus0.1ex}
+\setlength{\parindent}{0em}
+
+% Packages
+\usepackage{a4wide}
+\usepackage[american]{babel}
+\usepackage{floatrow}
+\usepackage{url}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{enumitem}
+\usepackage{authblk}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+
+% References
+\usepackage[backend=bibtex, sorting=none]{biblatex}
+\bibliography{references}
+\usepackage{csquotes}
+
+\begin{filecontents*}{references.bib}
+@misc{eUtiles,
+    url = {http://www.ncbi.nlm.nih.gov/books/NBK25500/}
+}
+\end{filecontents*}
+
+%Title
+\title{\emph{webQueries}: Retrieve genes or protein annotations by
+    querying NCBI.}
+
+% Authors
+\author[1]{Frederic Commo}
+
+\affil[1]{INSERM U981, Institut Gustave Roussy, 114 rue Edouard Vaillant,
+    94805 Villejuif, France}
+
+\renewcommand\Authands{ and }
+\renewcommand\Affilfont{\fontsize{9}{10.8}\itshape}
+
+\begin{document}
+
+\maketitle
+
+%\VignetteIndexEntry{Using webQueries}
+%\VignetteEngine{knitr::knitr}
+
+% Chunk setup
+<<setup, include=FALSE>>=
+require(knitr)
+opts_chunk$set(fig.align='center', fig.width=5.5, fig.height=4.5,
+    dev='pdf', prompt=TRUE, comment=NA, highlight=FALSE, tidy=FALSE)
+@
+
+\section{Introduction}
+\texttt{webQueries} provides R functions for retrieving gene and protein
+    annotations from NCBI, given HUGO symbols or ids (entrezgene and Uniprot
+    are supported).\\
+The two main functions, \texttt{geneQuery()} and \texttt{protQuery()},
+are wrappers for the NCBI E-utilities functions.\\
+Visit \url{http://www.ncbi.nlm.nih.gov/books/NBK25500/} for more details.
+
+\section{Examples}
+Here are some examples showing how a single, or multiple, annotation(s) can be
+retrieved using either official symbols or identifiers:
+
+<<gene, echo=TRUE, prompt=FALSE>>=
+require(webQueries)
+
+# Using HUGO symbol
+geneQuery("erbb2")
+
+# Using entrezgene id
+data.frame(output=geneQuery(2064))
+@
+
+The same task can be applied on multiple symbols (or ids):
+
+<<mutligene, echo=TRUE, prompt=FALSE>>=
+# Multiple queries
+ids <- c("egfr", "erbb2", "fgfr1")
+annots <- lapply(ids, function(id) geneQuery(id) )
+annots <- do.call(rbind, annots)
+annots
+@
+
+Similarly to \texttt{geneQuery}, \texttt{protQuery} can deal with either symbols
+or ids - here UniProt identifiers - and can be reformated:
+
+<<prot, echo=TRUE, prompt=FALSE>>=
+# Using UniProt id
+myProt <- protQuery("P04626")
+as.list(myProt)
+@
+
+Again, the function can be put into any kind of loop, e.g. \texttt{lapply},
+in order to run multiple queries:
+
+<<multiprot, echo=TRUE, prompt=FALSE>>=
+# Multiple queries
+ids <- c("egfr", "erbb2", "fgfr1")
+annots <- lapply(ids, function(id) protQuery(id) )
+annots <- do.call(rbind, annots)
+annots
+@
+
+\section{Accessing R code}
+R source code for \texttt{webQueries} is available on github:
+\url{https://github.com/fredcommo/webQueries}
+
+\printbibliography
+
+\end{document}

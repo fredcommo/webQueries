@@ -1,5 +1,4 @@
 # Imports
 import(XML)
-import(Hmisc)
 
 exportPattern("^[[:alpha:]]+")

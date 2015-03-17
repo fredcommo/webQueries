@@ -1,0 +1,107 @@
+
+
+%\documentclass{article}
+\documentclass[a4paper]{article}
+\setlength{\parskip}{0.7ex plus0.1ex minus0.1ex}
+\setlength{\parindent}{0em}
+
+% Packages
+\usepackage{a4wide}
+\usepackage[american]{babel}
+\usepackage{floatrow}
+\usepackage{url}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{enumitem}
+\usepackage{authblk}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+
+% References
+\usepackage[backend=bibtex, sorting=none]{biblatex}
+\bibliography{references}
+\usepackage{csquotes}
+
+\begin{filecontents*}{references.bib}
+@misc{eUtiles,
+    url = {http://www.ncbi.nlm.nih.gov/books/NBK25500/}
+}
+\end{filecontents*}
+
+%Title
+\title{\emph{webQueries}: Retrieve genes or protein annotations by
+    querying NCBI.}
+
+% Authors
+\author[1]{Frederic Commo}
+
+\affil[1]{INSERM U981, Institut Gustave Roussy, 114 rue Edouard Vaillant,
+    94805 Villejuif, France}
+
+\renewcommand\Authands{ and }
+\renewcommand\Affilfont{\fontsize{9}{10.8}\itshape}
+
+\begin{document}
+
+\maketitle
+
+%\VignetteIndexEntry{Using webQueries}
+%\VignetteEngine{knitr::knitr}
+
+% Chunk setup
+<<setup, include=FALSE>>=
+require(knitr)
+opts_chunk$set(fig.align='center', fig.width=5.5, fig.height=4.5,
+    dev='pdf', prompt=TRUE, comment=NA, highlight=FALSE, tidy=FALSE)
+@
+
+\section{Introduction}
+\texttt{webQueries} provides R functions for retrieving up-to-date gene and
+protein annotations from NCBI databases, given HUGO symbols or ids, e.g. 
+entrezgene or Uniprot ids.\\
+The main function, \texttt{runQuery()}, is a wrapper for the NCBI E-utilities 
+functions \cite{eUtiles}, and is designed to query \emph{genes},
+ \emph{protein}, and  \emph{snp} databases.
+\texttt{runQueries} requires a functional connection to internet.\\
+In case a HUGO symbol is called, \texttt{runQuery} first interogate NCBI in 
+order to get identifiers, using E-utilities \texttt{Esearch}, then use the 
+returned values to get the corresponding annotations, using E-utilities
+\texttt{Esummary}.
+
+\section{Examples}
+Here are some examples showing how a single, or multiple, annotation(s) can be
+retrieved using either official symbols or identifiers.\\
+
+<<gene, echo=TRUE, prompt=FALSE>>=
+require(webQueries)
+
+runQuery("erbb2", "gene")
+runQuery(2064, "gene", bySymbol = FALSE)
+
+# Querying the Protein database
+runQuery("erbb2", "protein")
+runQuery(2064, "protein", bySymbol = FALSE)
+
+# Querying the SNP database
+runQuery("erbb2", "snp")
+runQuery(2064, "snp", bySymbol = FALSE)
+@
+
+A siple way to run multiple queries is to call \texttt{runQuery} within a loop, 
+e.g. \texttt{lapply}:
+
+<<multi, echo=TRUE, prompt=FALSE>>=
+# Multiple queries
+ids <- c("egfr", "erbb2", "fgfr1")
+annots <- lapply(ids, function(id) runQuery(id, "gene") )
+annots <- do.call(rbind, annots)
+annots
+@
+
+\section{Accessing R code}
+R source code for \texttt{webQueries} is available on github:
+\url{https://github.com/fredcommo/webQueries}
+
+\printbibliography
+
+\end{document}
