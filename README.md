@@ -1,6 +1,6 @@
 # webQueries
-A R package for querying NCBI \emph{Gene}, \emph{Protein}, and \emph{SNP} databases.
-R functions are implementations of NCBI E-utilities \url{http://www.ncbi.nlm.nih.gov/books/NBK25500/}
+A R package for querying NCBI *Gene*, *Protein*, and *SNP* databases.
+R functions are implementations of NCBI E-utilities *http://www.ncbi.nlm.nih.gov/books/NBK25500/*
 
 Download "webQueries_0.98.0.tar.gz"
 
