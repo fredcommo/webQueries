@@ -10,6 +10,7 @@ or directly install from github using *devtools*, as follow:
 
 ```r
 # in R session
+# Use first install.packages("devtools") if needed
 require(devtools)
 install_github("fredcommo/webQueries/webQueries")
 
