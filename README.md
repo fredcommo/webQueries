@@ -16,12 +16,12 @@ install_github("fredcommo/webQueries/webQueries")
 # see examples
 require(webQueries)
 
-# Reading the vignette
-vignette(webQueries)
-
-# To run a single query
+# How to run a single query
 ?runQuery
 
-# To run multiple queries
+# How to run multiple queries
 ?multiQueries
+
+# Reading the vignette
+vignette(webQueries)
 ````
