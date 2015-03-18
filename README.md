@@ -6,7 +6,7 @@ Download "webQueries_0.98.0.tar.gz"
 
 then use R CMD INSTALL webQueries_0.98.0.tar.gz
 
-or
+or install from github using *devtools*, as follow:
 
 ```r
 # in R session
