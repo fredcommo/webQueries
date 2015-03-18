@@ -59,9 +59,9 @@ opts_chunk$set(fig.align='center', fig.width=5.5, fig.height=4.5,
 \texttt{webQueries} provides R functions for retrieving up-to-date gene and
 protein annotations from NCBI databases, given HUGO symbols or ids, e.g. 
 entrezgene or Uniprot ids.\\
-The main function, \texttt{runQuery()}, is a wrapper for the NCBI E-utilities 
-functions \cite{eUtiles}, and is designed to query \emph{genes},
- \emph{protein}, and  \emph{snp} databases.
+The main function, \texttt{runQuery()}, is a wrapper for the NCBI E-utilities
+functions \cite{eUtiles}, and is designed to query \emph{Gene},
+\emph{Protein}, and \emph{SNP} databases.
 \texttt{runQueries} requires a functional web connexion.\\
 In case a HUGO symbol is called, \texttt{runQuery} first interogate NCBI in 
 order to get identifiers, using E-utilities \texttt{Esearch}, then use the 
@@ -72,30 +72,47 @@ returned values to get the corresponding annotations, using E-utilities
 Here are some examples showing how a single, or multiple, annotation(s) can be
 retrieved using either official symbols or identifiers.\\
 
-<<gene, echo=TRUE, prompt=FALSE>>=
+Querying the NCBI \emph{Gene} database, using HUGO symbols:
+
+<<gene>>=
 require(webQueries)
+gquery <- runQuery("erbb2", "gene")
 
-runQuery("erbb2", "gene")
-runQuery(2064, "gene", bySymbol = FALSE)
-
-# Querying the Protein database
-runQuery("erbb2", "protein")
-runQuery("P04626", "protein", bySymbol = FALSE)
-
-# Querying the SNP database
-runQuery("erbb2", "snp")
-runQuery(2064, "snp", bySymbol = FALSE)
+# The first 5 items
+as.list(gquery)[1:5]
 @
 
-A siple way to run multiple queries is to call \texttt{runQuery} within a loop, 
-e.g. \texttt{lapply}:
+Querying the NCBI \emph{Protein} database, using Uniprot ids:
 
-<<multi, echo=TRUE, prompt=FALSE>>=
-# Multiple queries
+<<prot>>=
+pquery <- runQuery("P04626", "protein", bySymbol = FALSE)
+
+# The first 5 items
+as.list(pquery)[1:5]
+@
+
+When querying the NCBI \texttt{SNP} database, one may not be interested only in
+the last updates, but in all the outputs. To do so, the \texttt{updateOnly}
+argument must be set to \texttt{FALSE}:
+
+<<snpQuery>>=
+query <- runQuery("erbb2", "snp", updateOnly = FALSE)
+query[,1:5]
+@
+
+A simple way to run multiple queries would be to call \texttt{runQuery} within
+a loop, e.g. \texttt{lapply}. However, each returned xml file may not contain
+exactly the same items - some may not be available.
+\texttt{multiQueries} takes care of this, and returns the common items over
+all the queries.
+
+<<multi>>=
+# Multiple queries on the Gene database, using HUGO symbols
 ids <- c("egfr", "erbb2", "fgfr1")
-annots <- lapply(ids, function(id) runQuery(id, "gene") )
-annots <- do.call(rbind, annots)
-annots
+annots <- multiQueries(ids, "gene")
+annots[,1:8]
+# List of returned items
+names(annots)
 @
 
 \section{Accessing R code}

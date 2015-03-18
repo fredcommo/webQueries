@@ -12,12 +12,12 @@ Information is extracted from the returned xml file,
 using \code{\link[XML]{xpathApply}} from \code{XLM} package.
 }
 \usage{
-runQuery(symbol, db, bySymbol = TRUE, ktries = 10)
+    runQuery(symbol, db, bySymbol = TRUE, updateOnly = TRUE, ktries = 10)
 }
 \arguments{
     \item{symbol}{
         : character or numeric. \code{geneId} can be either a valid HUGO symbol
-        (not case sensitive), or an entrezgene id. See \code{note}.
+        (not case sensitive), or an entrezgene id.
         }
     \item{db}{
         : string. The NCBI database to query.
@@ -25,6 +25,11 @@ runQuery(symbol, db, bySymbol = TRUE, ktries = 10)
         }
     \item{bySymbol}{
         : logical. Must be set to \code{TRUE} when a HUGO symbols is used.
+        }
+    \item{updateOnly}{
+        : logical. Should the query returns the last update only.
+        Default is \code{TRUE}. May be set to \code{FALSE} when \code{snp} is
+        queried.
         }
     \item{ktries}{
         : numeric. The number of retries when connexion errors occur.
@@ -43,25 +48,19 @@ runQuery(symbol, db, bySymbol = TRUE, ktries = 10)
     \code{runQuery} only supports queries sent to
     \code{"gene"}, \code{"protein"} , and \code{"snp"} databases.
 }
-
+\seealso{
+    \code{\link{runQuery}}
+}
 \examples{
 # Querying the gene database using HUGO symbol or entrezgene id
-\dontrun{
-runQuery("erbb2", "gene")
-runQuery(2064, "gene", bySymbol = FALSE)
+gquery <- runQuery("erbb2", "gene")
+as.list(gquery)
 
 # Querying the Protein database
-runQuery("erbb2", "protein")
-runQuery("P04626", "protein", bySymbol = FALSE)
+pquery <- runQuery("P04626", "protein", bySymbol = FALSE)
+as.list(pquery)
 
 # Querying the SNP database
-runQuery("erbb2", "snp")
-runQuery(2064, "snp", bySymbol = FALSE)
-
-# Multiple queries
-ids <- c("egfr", "erbb2", "fgfr1")
-annots <- lapply(ids, function(id) runQuery(id, "gene") )
-annots <- do.call(rbind, annots)
-annots
-}
+snpquery <- runQuery(2064, "snp", bySymbol = FALSE, updateOnly = FALSE)
+snpquery[,1:5]
 }

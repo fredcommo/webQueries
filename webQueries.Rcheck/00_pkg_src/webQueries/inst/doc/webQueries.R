@@ -3,24 +3,28 @@ require(knitr)
 opts_chunk$set(fig.align='center', fig.width=5.5, fig.height=4.5,
     dev='pdf', prompt=TRUE, comment=NA, highlight=FALSE, tidy=FALSE)
 
-## ----gene, echo=TRUE, prompt=FALSE---------------------------------------
+## ----gene----------------------------------------------------------------
 require(webQueries)
+gquery <- runQuery("erbb2", "gene")
 
-runQuery("erbb2", "gene")
-runQuery(2064, "gene", bySymbol = FALSE)
+# The first 5 items
+as.list(gquery)[1:5]
 
-# Querying the Protein database
-runQuery("erbb2", "protein")
-runQuery("P04626", "protein", bySymbol = FALSE)
+## ----prot----------------------------------------------------------------
+pquery <- runQuery("P04626", "protein", bySymbol = FALSE)
 
-# Querying the SNP database
-runQuery("erbb2", "snp")
-runQuery(2064, "snp", bySymbol = FALSE)
+# The first 5 items
+as.list(pquery)[1:5]
 
-## ----multi, echo=TRUE, prompt=FALSE--------------------------------------
-# Multiple queries
+## ----snpQuery------------------------------------------------------------
+query <- runQuery("erbb2", "snp", updateOnly = FALSE)
+query[,1:5]
+
+## ----multi---------------------------------------------------------------
+# Multiple queries on the Gene database, using HUGO symbols
 ids <- c("egfr", "erbb2", "fgfr1")
-annots <- lapply(ids, function(id) runQuery(id, "gene") )
-annots <- do.call(rbind, annots)
-annots
+annots <- multiQueries(ids, "gene")
+annots[,1:8]
+# List of returned items
+names(annots)
 

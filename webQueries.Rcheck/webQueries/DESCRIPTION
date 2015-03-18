@@ -12,5 +12,5 @@ biocViews: Annotation,GenomeAnnotation
 Imports: XML,Hmisc
 Suggests: RUnit,knitr,BiocGenerics
 VignetteBuilder: knitr
-Packaged: 2015-03-17 13:16:38 UTC; fredcommo
-Built: R 3.1.2; ; 2015-03-17 13:17:50 UTC; unix
+Packaged: 2015-03-18 09:10:06 UTC; fredcommo
+Built: R 3.1.2; ; 2015-03-18 09:11:49 UTC; unix

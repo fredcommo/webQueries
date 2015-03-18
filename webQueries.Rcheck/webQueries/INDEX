@@ -1,3 +1,4 @@
+multiQueries            Retrieve NCBI annotations through Web Queries
 runQuery                Retrieve NCBI annotations through Web Queries
 webQueries-package      Querying NCBI for Gene and/or Protein
                         Annotations.

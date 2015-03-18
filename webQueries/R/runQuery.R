@@ -43,7 +43,8 @@
         cat("Connexion error during gsearch - I'm trying again...", k, "\n")
     }
     if(class(doc)[1] == 'try-error')
-        stop ('Connection temporarily unavailable. Check it manually:\n', URL)
+        stop ('Invalid url, or the connexion is temporarily unavailable.\n
+            Check it manually:\n', URL)
     sapply(c("//Id"), xpathApply, doc = doc, fun = xmlValue)
 }
 .gsummary <- function (id, db, kTries){
@@ -65,10 +66,17 @@
     names(values) <- items
     return(values)
 }
+.filtCol <- function(outList){
+    isnull <- sapply(outList, function(tmp) is.null(tmp))
+    items <- lapply(outList[!isnull], function(tmp) names(tmp))
+    cmon <- Reduce(function(x, y) intersect(x, y), items)
+    filtList <- lapply(outList, function(tmp) tmp[cmon])
+    return(filtList)
+}
 ######################
 # Main function
 #####################
-runQuery <- function(symbol, db, bySymbol=TRUE, ktries=10){
+runQuery <- function(symbol, db, bySymbol=TRUE, updateOnly=TRUE, ktries=10){
     if(db=="protein" || db=="snp")
         bySymbol <- TRUE
     if(bySymbol){
@@ -86,8 +94,26 @@ runQuery <- function(symbol, db, bySymbol=TRUE, ktries=10){
         else
             return(c(query=symbol, tmp, GI=id))
     })
-    out <- as.data.frame(do.call(rbind, out))
-    if(nrow(out)==0)
+    if(length(out)>1)
+        out <- .filtCol(out)
+    if(length(out)==0)
         return(NULL)
+    out <- as.data.frame(do.call(rbind, out))
+    if(updateOnly)
+        out <- out[1,]
     return(out)
 }
+multiQueries <- function(List, db, bySymbol = TRUE, updateOnly=TRUE,
+    ktries = 10, verbose=TRUE){
+    annots <- lapply(List, function(id){
+        id <- as.character(id)
+        if(verbose) cat("Searching", id, "\n")
+        runQuery(id, db, bySymbol, ktries)
+    }
+    )
+    annots <- .filtCol(annots)
+    annots <- as.data.frame(do.call(rbind, annots))
+    rownames(annots) <- seq(1, nrow(annots))
+    return(annots)
+}
+

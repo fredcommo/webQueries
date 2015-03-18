@@ -12,4 +12,4 @@ biocViews: Annotation,GenomeAnnotation
 Imports: XML,Hmisc
 Suggests: RUnit,knitr,BiocGenerics
 VignetteBuilder: knitr
-Packaged: 2015-03-17 13:16:38 UTC; fredcommo
+Packaged: 2015-03-18 09:10:06 UTC; fredcommo

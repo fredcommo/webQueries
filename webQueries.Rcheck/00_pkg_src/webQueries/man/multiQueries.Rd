@@ -1,23 +1,23 @@
-\name{runQuery}
-\alias{runQuery}
+\name{multiQueries}
+\alias{multiQueries}
 
 \title{
 Retrieve NCBI annotations through Web Queries
 }
 \description{
-This function simply constructs an appropriate link to query the NCBI databases,
-using E-utilities. See \code{note}.
+As for \code{link{runQuery}}, this function uses NCBI E-utilities to query NCBI
+databases. See \code{note}
 HUGO symbols or official ids are supported.\cr
-Information is extracted from the returned xml file,
-using \code{\link[XML]{xpathApply}} from \code{XLM} package.
+This version allows to run multiple queries, and returns the common items.
 }
 \usage{
-    runQuery(symbol, db, bySymbol = TRUE, updateOnly = TRUE, ktries = 10)
+multiQueries(List, db, bySymbol = TRUE, updateOnly = TRUE,
+    ktries = 10, verbose = TRUE)
 }
 \arguments{
-    \item{symbol}{
-        : character or numeric. \code{geneId} can be either a valid HUGO symbol
-        (not case sensitive), or an entrezgene id.
+    \item{List}{
+        : character or numeric. A list or a vector of valid HUGO symbols
+        (not case sensitive), or ids.
         }
     \item{db}{
         : string. The NCBI database to query.
@@ -35,9 +35,12 @@ using \code{\link[XML]{xpathApply}} from \code{XLM} package.
         : numeric. The number of retries when connexion errors occur.
         Default is 10.
         }
+    \item{verbose}{
+        : logical. Should the process be monitored. Default is \code{TRUE}.
+}
 }
 \value{
-    A vector of values.  
+    A data set.
 }
 \author{
     Frederic Commo
@@ -52,15 +55,10 @@ using \code{\link[XML]{xpathApply}} from \code{XLM} package.
     \code{\link{runQuery}}
 }
 \examples{
-# Querying the gene database using HUGO symbol or entrezgene id
-gquery <- runQuery("erbb2", "gene")
-as.list(gquery)
+# Multiple queries
+ids <- c("egfr", "erbb2", "fgfr1")
+queries <- multiQueries(ids, "gene")
 
-# Querying the Protein database
-pquery <- runQuery("P04626", "protein", bySymbol = FALSE)
-as.list(pquery)
-
-# Querying the SNP database
-snpquery <- runQuery(2064, "snp", bySymbol = FALSE, updateOnly = FALSE)
-snpquery[,1:5]
+# Show the first 3 columns
+queries[,1:3]
 }

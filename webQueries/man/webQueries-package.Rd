@@ -38,19 +38,14 @@ Information is extracted from the returned xml file.
 \examples{
 # Querying the gene database using HUGO symbol or entrezgene id
 runQuery("erbb2", "gene")
-runQuery(2064, "gene", bySymbol = FALSE)
 
 # Querying the Protein database
-runQuery("erbb2", "protein")
 runQuery("P04626", "protein", bySymbol = FALSE)
 
 # Querying the SNP database
-runQuery("erbb2", "snp")
 runQuery(2064, "snp", bySymbol = FALSE)
 
 # Multiple queries
 ids <- c("egfr", "erbb2", "fgfr1")
-annots <- lapply(ids, function(id) runQuery(id, "gene") )
-annots <- do.call(rbind, annots)
-annots
+multiQueries(ids, "gene")
 }
